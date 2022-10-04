@@ -239,13 +239,15 @@ void home10() {
             if (d[i][j] > max)
 #pragma omp critical
             {
-                max = d[i][j];
+                if (d[i][j] > max)
+                    max = d[i][j];
             }
 
             if (d[i][j] < min)
 #pragma omp critical
             {
-                min = d[i][j];
+                if (d[i][j] < min)
+                    min = d[i][j];
             }
 
         }
